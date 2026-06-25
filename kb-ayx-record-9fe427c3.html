@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 温和入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #fbe9e7 0%, #f8d7da 40%, #fce4ec 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.7;
+            color: #2e2a2a;
+        }
+
+        .card {
+            max-width: 880px;
+            width: 100%;
+            background: rgba(255, 248, 245, 0.88);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 48px;
+            padding: 3rem 3.2rem;
+            box-shadow: 0 20px 40px -12px rgba(180, 100, 90, 0.25),
+                        0 8px 20px rgba(255, 220, 210, 0.3);
+            border: 1px solid rgba(255, 235, 225, 0.7);
+            transition: all 0.2s ease;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1.2rem; }
+            .card { padding: 2rem 1.5rem; border-radius: 32px; }
+        }
+
+        /* 开篇短句 —— 柔和如话 */
+        .greeting {
+            font-size: 2.2rem;
+            font-weight: 350;
+            letter-spacing: 1px;
+            color: #7a4a44;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+            border-left: 5px solid #dbb4ad;
+            padding-left: 1.2rem;
+        }
+        .greeting span {
+            background: #f5e3df;
+            display: inline-block;
+            padding: 0 10px 2px 10px;
+            border-radius: 30px;
+            font-weight: 400;
+        }
+
+        .sub-line {
+            font-size: 1.05rem;
+            color: #6f5a56;
+            margin: 0.6rem 0 2rem 0;
+            padding-left: 1.8rem;
+            opacity: 0.9;
+        }
+
+        /* 承接段落 */
+        .leading-text p {
+            margin-bottom: 1.25rem;
+            font-size: 1.06rem;
+        }
+        .leading-text a {
+            color: #a54f44;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #cfa39b;
+            transition: border 0.15s, background 0.15s;
+            padding: 0 2px;
+            border-radius: 4px;
+        }
+        .leading-text a:hover {
+            border-bottom: 1px solid #a54f44;
+            background: #fbe1db;
+        }
+
+        /* 特点列表 —— 圆角卡片感 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2.5rem 0 2rem 0;
+        }
+        .feature-item {
+            flex: 1 1 180px;
+            background: #fcf4f1;
+            border-radius: 32px;
+            padding: 1.6rem 1.2rem 1.4rem 1.2rem;
+            border: 1px solid #f2dfd9;
+            box-shadow: 0 6px 14px rgba(170, 120, 110, 0.08);
+            transition: transform 0.1s, box-shadow 0.2s;
+        }
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 18px rgba(170, 110, 100, 0.12);
+            background: #fff9f6;
+        }
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #7a4a44;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #4f3e3b;
+            line-height: 1.5;
+        }
+
+        /* 温和的段落 — 场景与说明 */
+        .scene-note {
+            background: #f7ebe8;
+            padding: 1.6rem 2rem;
+            border-radius: 40px;
+            margin: 2rem 0 1.6rem 0;
+            border: 1px solid #edd9d3;
+        }
+        .scene-note p {
+            font-size: 1.02rem;
+            margin-bottom: 0.8rem;
+        }
+        .scene-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* FAQ 小摘要 */
+        .faq-mini {
+            margin: 1.8rem 0 0.8rem 0;
+            padding: 0.2rem 0;
+        }
+        .faq-item {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #edd5cf;
+        }
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #6a413c;
+            font-size: 0.98rem;
+        }
+        .faq-a {
+            font-size: 0.93rem;
+            color: #4a3e3b;
+            margin-top: 0.2rem;
+            padding-left: 0.8rem;
+        }
+        .faq-a a {
+            color: #a54f44;
+            text-decoration: none;
+            border-bottom: 1px dotted #c9a9a1;
+        }
+        .faq-a a:hover {
+            background: #f5dfd9;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            margin-top: 2.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e6cdc6;
+            font-size: 0.96rem;
+            color: #5b4a46;
+            text-align: right;
+            font-style: normal;
+            letter-spacing: 0.3px;
+        }
+        .closing span {
+            background: #f1ddd8;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #edd9d2;
+            margin: 1.2rem 0 0.6rem 0;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- 开场短句 -->
+        <div class="greeting">
+            一个稳定的入口<span> · 一份安静的说明</span>
+        </div>
+        <div class="sub-line">
+            没有喧哗的承诺，只有始终如一的路径。
+        </div>
+
+        <!-- 承接段落：从稳定入口和页面说明角度 -->
+        <div class="leading-text">
+            <p>
+                很多朋友在寻找一个可靠的地方，能让自己在闲暇时放松下来，浏览感兴趣的内容。
+                对许多人而言，<a href="https://kb-ayx.com.cn">爱游戏</a>就是这样一个方向——
+                它并非某个短暂的热点，而是经过时间沉淀下来的一个稳定入口，聚集了丰富而真实的信息。
+            </p>
+            <p>
+                在这个页面上，我们只讲述它最朴素的轮廓：一个可以让你持续关注、自由探索的空间。
+                没有浮夸的渲染，每一处设计都尽量贴近自然，就像走进一间熟悉的客厅，灯光温和，桌椅踏实。
+            </p>
+        </div>
+
+        <!-- 特点列表（卡片式圆角） -->
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>🌿 稳定的访问</h3>
+                <p>域名长期维护，访问流畅。无论是日常浏览还是偶尔驻足，路径始终清晰可用。</p>
+            </div>
+            <div class="feature-item">
+                <h3>📋 内容说明</h3>
+                <p>页面结构指向明确，没有迷宫般的跳转。你可以轻松了解站点所涵盖的主题与方向。</p>
+            </div>
+            <div class="feature-item">
+                <h3>🔐 温和体验</h3>
+                <p>无过度推送，无强制弹窗。信息展示保持克制，把选择权留给你。</p>
+            </div>
+            <div class="feature-item">
+                <h3>🧭 入口即桥梁</h3>
+                <p>它不是一个终点，而是通往更多可能性的起点。从稳定的入口出发，一切顺其自然。</p>
+            </div>
+        </div>
+
+        <!-- 场景段落：自然嵌入链接，且文字为「爱游戏」 -->
+        <div class="scene-note">
+            <p>
+                设想一个傍晚，你打开浏览器，想找一些轻松的资讯或有趣的讨论。
+                这时，一个熟悉的地址出现在书签栏 —— <a href="https://kb-ayx.com.cn">爱游戏</a>。
+                页面加载的一瞬间，没有刺眼的广告，只有干净的内容等待你翻阅。
+            </p>
+            <p>
+                这就是“稳定入口”的意义：不必每次重新寻找，不必担心链接失效。
+                <a href="https://kb-ayx.com.cn">爱游戏</a>作为这样一个载体，把持续更新的内容与你的习惯连接起来。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要 —— 温和、说明性 -->
+        <div class="faq-mini">
+            <div class="faq-item">
+                <span class="faq-q">❓ 这个网站主要提供什么？</span>
+                <span class="faq-a">
+                    它是一个综合性的信息页面，围绕游戏、娱乐与文化内容展开，风格偏向轻松与实用。具体内容你可以直接通过 <a href="https://kb-ayx.com.cn">爱游戏</a> 去了解和发现。
+                </span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-q">❓ 访问是否安全、稳定？</span>
+                <span class="faq-a">
+                    域名经过长期维护，采用常规安全措施。作为一个公开站点，它适合普通浏览需求，但依然建议你注意个人信息保护。
+                </span>
+            </div>
+            <div class="faq-item">
+                <span class="faq-q">❓ 需要注册或下载吗？</span>
+                <span class="faq-a">
+                    不需要。直接通过浏览器进入 <a href="https://kb-ayx.com.cn">爱游戏</a> 即可浏览大部分内容。部分互动功能可能视情况而定，但入口始终开放。
+                </span>
+            </div>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="closing">
+            <span>不只是入口，更是一种习惯。</span>
+            <hr>
+            <p style="margin-top: 6px; font-size: 0.9rem;">—— 不打扰，不夸大，只提供一个安静的起点。</p>
+        </div>
+    </div>
+</body>
+</html>
